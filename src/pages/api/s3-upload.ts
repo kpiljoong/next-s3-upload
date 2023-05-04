@@ -48,6 +48,7 @@ let makeRouteHandler = (options: Options = {}): Handler => {
         : `next-s3-uploads/${uuid()}/${sanitizeKey(filename)}`;
       let { bucket, region, endpoint } = config;
       console.log('key', key);
+      console.log('key', key);
 
       if (uploadType === 'presigned') {
         let filetype = req.body.filetype;

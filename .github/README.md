@@ -1,1 +1,0 @@
-../packages/next-s3-upload/README.md

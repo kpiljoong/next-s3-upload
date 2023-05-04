@@ -41,11 +41,13 @@ let makeRouteHandler = (options: Options = {}): Handler => {
     } else {
       let uploadType = req.body._nextS3?.strategy;
       let filename = req.body.filename;
+      console.log('original', filename);
 
       let key = options.key
         ? await Promise.resolve(options.key(req, filename))
         : `next-s3-uploads/${uuid()}/${sanitizeKey(filename)}`;
       let { bucket, region, endpoint } = config;
+      console.log('key', key);
 
       if (uploadType === 'presigned') {
         let filetype = req.body.filetype;

@@ -42,7 +42,7 @@ let makeRouteHandler = (options: Options = {}): Handler => {
       let uploadType = req.body._nextS3?.strategy;
       let filename = req.body.filename;
 
-      filename = encodeURIComponent(filename);
+      filename = Buffer.from(filename, "utf8").toString('base64');
       let key = options.key
         ? await Promise.resolve(options.key(req, filename))
         : `next-s3-uploads/${uuid()}/${filename}`;

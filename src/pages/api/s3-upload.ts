@@ -8,7 +8,7 @@ import { PutObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { getConfig, S3Config } from '../../utils/config';
 import { getClient } from '../../utils/client';
-import { sanitizeKey, uuid } from '../../utils/keys';
+import { uuid } from '../../utils/keys';
 
 type NextRouteHandler = (
   req: NextApiRequest,

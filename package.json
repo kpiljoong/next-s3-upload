@@ -1,6 +1,7 @@
 {
   "private": true,
   "workspaces": ["packages/next-s3-upload", "packages/docs-site"],
+  "precommit": "build",
   "scripts": {
     "dev": "yarn workspace next-s3-upload start",
     "build": "yarn workspace next-s3-upload build",
